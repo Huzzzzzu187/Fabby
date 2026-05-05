@@ -9,7 +9,7 @@ import { toast } from 'react-toastify'
 const PlaceOrder = () => {
 
   const [method, setMethod] = useState('cod');
-  const { navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products } = useContext(ShopContext);
+  const { navigate, token, cartItems, setCartItems, getCartAmount, delivery_fee, products } = useContext(ShopContext);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -44,7 +44,7 @@ const PlaceOrder = () => {
         console.log(response)
         try {
 
-          const { data } = await axios.post(backendUrl + '/api/order/verifyRazorpay', response, { headers: { token } })
+          const { data } = await axios.post('/api/order/verifyRazorpay', response, { headers: { token } })
           if (data.success) {
             navigate('/orders')
             setCartItems({})
@@ -113,7 +113,7 @@ const PlaceOrder = () => {
         //API Calls for COD
         case 'cod':
 
-          const response = await axios.post(backendUrl + '/api/order/place', orderData, { headers: { token } })
+          const response = await axios.post('/api/order/place', orderData, { headers: { token } })
 
           if (response.data.success) {
             setCartItems({})
@@ -127,7 +127,7 @@ const PlaceOrder = () => {
           break;
 
         case 'stripe':
-          const responseStripe = await axios.post(backendUrl + '/api/order/stripe', orderData, { headers: { token } })
+          const responseStripe = await axios.post('/api/order/stripe', orderData, { headers: { token } })
           if (responseStripe.data.success) {
             const session_url = responseStripe.data.session_url;
             window.location.replace(session_url)
@@ -139,7 +139,7 @@ const PlaceOrder = () => {
 
         case 'razorpay':
 
-          const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData, { headers: { token } })
+          const responseRazorpay = await axios.post('/api/order/razorpay', orderData, { headers: { token } })
           if (responseRazorpay.data.success) {
             initPay(responseRazorpay.data.order);
 

@@ -7,7 +7,7 @@ import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
 
 const Signup = () => {
-  const { setToken, navigate, backendUrl, token } = useContext(ShopContext);
+  const { setToken, navigate, token } = useContext(ShopContext);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -60,7 +60,7 @@ const Signup = () => {
         address: formData.address
       };
 
-      const response = await axios.post(backendUrl + '/api/user/register', payload);
+      const response = await axios.post('/api/user/register', payload);
       
       if (response.data.success) {
         setToken(response.data.token);

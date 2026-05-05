@@ -7,7 +7,7 @@ import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
 
 const Login = () => {
-  const { setToken, navigate, backendUrl, token } = useContext(ShopContext);
+  const { setToken, navigate, token } = useContext(ShopContext);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,7 +25,7 @@ const Login = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(backendUrl + '/api/user/login', { email, password });
+      const response = await axios.post('/api/user/login', { email, password });
       
       if (response.data.success) {
         setToken(response.data.token);

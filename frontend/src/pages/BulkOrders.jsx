@@ -1,10 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { ShopContext } from '../context/ShopContext';
 
 const BulkOrders = () => {
-  const { backendUrl } = useContext(ShopContext);
   const [formData, setFormData] = useState({
     fullName: '',
     organizationName: '',
@@ -23,7 +21,7 @@ const BulkOrders = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(backendUrl + '/api/bulkorder/place', formData);
+      const response = await axios.post('/api/bulkorder/place', formData);
       if (response.data.success) {
         toast.success(response.data.message);
         setFormData({

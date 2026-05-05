@@ -6,12 +6,20 @@ import { toast } from 'react-toastify'
 
 
 export const ShopContext = createContext();
+const backendUrl = import.meta.env.VITE_BACKEND_URL
+
+axios.defaults.baseURL = backendUrl
+
+const getImageUrl = (image) => {
+    if (!image) return ''
+
+    return `${backendUrl}/images/${image}`
+}
 
 const ShopContextProvider = (props) => {
 
     const currency = '₹';
     const delivery_fee = 10;
-    const backendUrl = import.meta.env.VITE_BACKEND_URL
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
@@ -42,7 +50,7 @@ const ShopContextProvider = (props) => {
 
         if (token) {
             try {
-                await axios.post(backendUrl + '/api/cart/add', { itemId, variantKey }, { headers: { token } })
+                await axios.post('/api/cart/add', { itemId, variantKey }, { headers: { token } })
             } catch (error) {
                 console.log(error)
                 toast.error(error.message)
@@ -71,7 +79,7 @@ const ShopContextProvider = (props) => {
 
         if (token) {
             try {
-                await axios.post(backendUrl + '/api/cart/update', { itemId, variantKey, quantity }, { headers: { token } })
+                await axios.post('/api/cart/update', { itemId, variantKey, quantity }, { headers: { token } })
             } catch (error) {
                 console.log(error)
                 toast.error(error.message)
@@ -106,7 +114,7 @@ const ShopContextProvider = (props) => {
     const getProductsData = async () => {
         try {
 
-            const response = await axios.get(backendUrl + '/api/product/list')
+            const response = await axios.get('/api/product/list')
             if(response.data.success){
                 setProducts(response.data.products)
             } else {
@@ -123,7 +131,7 @@ const ShopContextProvider = (props) => {
     const getUserCart = async ( token ) => {
         try {
 
-            const response = await axios.post(backendUrl + '/api/cart/get',{},{headers:{token}})
+            const response = await axios.post('/api/cart/get',{},{headers:{token}})
             if (response.data.success) {
                 setCartItems(response.data.cartData)
                 
@@ -157,7 +165,7 @@ const ShopContextProvider = (props) => {
         addToCart, cartItems,setCartItems,
         getCartCount,updateQuantity,
         getCartAmount, navigate, backendUrl,
-        setToken,token
+        setToken,token, getImageUrl
     }
 
     return (

@@ -3,7 +3,7 @@ import { ShopContext } from '../context/ShopContext';
 import { Link } from 'react-router-dom';
 
 const BestSeller = () => {
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency, getImageUrl } = useContext(ShopContext);
   const [bestSeller, setBestSeller] = useState([]);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const BestSeller = () => {
             {bestSeller.map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 flex gap-6 group">
                 <Link to={`/product/${item._id}`} className="w-24 h-24 rounded-2xl bg-slate-50 flex-shrink-0 overflow-hidden block">
-                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform" src={item.image[0]} alt={item.name} />
+                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform" src={getImageUrl(item.image[0])} alt={item.name} />
                 </Link>
                 <div className="flex-1">
                   <div className="flex text-yellow-400 mb-1">

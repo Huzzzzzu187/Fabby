@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Orders = () => {
 
-  const { backendUrl, token, currency } = useContext(ShopContext);
+  const { token, currency, getImageUrl } = useContext(ShopContext);
 
   const [orderData, setorderData] = useState([])
 
@@ -18,7 +18,7 @@ const Orders = () => {
 
       }
 
-      const response = await axios.post(backendUrl + '/api/order/userorders', {}, { headers: { token } })
+      const response = await axios.post('/api/order/userorders', {}, { headers: { token } })
       if (response.data.success) {
         let allOrdersItem = []
         response.data.orders.map((order) => {
@@ -56,7 +56,7 @@ const Orders = () => {
           orderData.map((item, index) => (
             <div key={index} className='py-4 border-t border-b border-slate-200 text-slate-700 flex flex-col md:flex-row md:items-center md:justify-between gap-4'>
               <div className='flex items-start gap-6 text-sm'>
-                <img className='w-16 sm:w-20' src={item.image[0]} alt="" />
+                <img className='w-16 sm:w-20' src={getImageUrl(item.image[0])} alt="" />
                 <div>
                   <p className='sm:text-base font-medium'>{item.name}</p>
                   <div className='flex items-center gap-3 mt-1 text-base text-slate-700'>
