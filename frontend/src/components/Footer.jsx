@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
         <div className="pt-10 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-wrap justify-center items-center gap-6 opacity-70">
-            <span className="text-xs text-slate-400 font-semibold uppercase tracking-widest">Our Partner</span>
+            <span className="text-xs text-slate-400 font-semibold uppercase tracking-widest">A Product of</span>
             <img src={assets.logo_second} alt="Partner Logo" className="h-8 w-auto object-contain" />
           </div>
           <p className="text-sm text-slate-400">© 2026 Fabby Healthcare Inc. All rights reserved.</p>
