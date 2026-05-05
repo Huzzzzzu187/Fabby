@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #3A7CA5;
+    --color-background-light: #f8f6f6;
+    --color-brand-soft-green: #e8f5e9;
+    --color-brand-deep-green: #2e7d32;
+}
+
+* {
+    font-family: "Public Sans", sans-serif;
+}
+
+select,
+input,
+textarea {
+    border: 1px solid #c2c2c2;
+    outline-color: var(--color-primary);
+    border-radius: 4px;
+}
+
+.active {
+    background-color: #eef5fa;
+    border-color: var(--color-primary);
+}
