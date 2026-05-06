@@ -13,7 +13,10 @@ axios.defaults.baseURL = backendUrl
 const getImageUrl = (image) => {
     if (!image) return ''
 
-    return `${backendUrl}/images/${image}`
+    // Extract raw filename if full URL/path is passed (handles localhost, relative, or cloud URL formats)
+    const filename = image.split('/').pop();
+
+    return `${import.meta.env.VITE_BACKEND_URL}/images/${filename}`
 }
 
 const ShopContextProvider = (props) => {
