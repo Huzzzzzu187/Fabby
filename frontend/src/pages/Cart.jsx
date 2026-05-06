@@ -4,7 +4,7 @@ import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal";
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity, navigate, token, getImageUrl } =
+  const { products, currency, cartItems, updateQuantity, navigate, token } =
     useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
@@ -58,7 +58,7 @@ const Cart = () => {
                 <div className="flex items-start gap-6">
                   <img
                     className="w-16 sm:w-20"
-                    src={getImageUrl(productData.image[0])}
+                    src={`/images/${productData.image[0]}`}
                     alt=""
                   />
                   <div>

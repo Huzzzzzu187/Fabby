@@ -7,7 +7,7 @@ import RelatedProducts from '../components/RelatedProducts';
 const Product = () => {
 
   const { productId } = useParams();
-  const { products, currency, addToCart, getImageUrl } = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState('');
   const [size, setSize] = useState('Large');
@@ -19,7 +19,7 @@ const Product = () => {
     products.map((item) => {
       if (item._id === productId) {
         setProductData(item);
-        setImage(getImageUrl(item.image[0]))
+        setImage(`/images/${item.image[0]}`)
 
 
         return null;
@@ -58,7 +58,7 @@ const Product = () => {
           <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full no-scrollbar gap-3'>
             {
               productData.image.map((item, index) => (
-                <img onClick={() => setImage(getImageUrl(item))} src={getImageUrl(item)} key={index} className='w-[24%] sm:w-full flex-shrink-0 cursor-pointer rounded-xl border border-slate-200 object-cover' alt="" />
+                <img onClick={() => setImage(`/images/${item}`)} src={`/images/${item}`} key={index} className='w-[24%] sm:w-full flex-shrink-0 cursor-pointer rounded-xl border border-slate-200 object-cover' alt="" />
               ))
             }
           </div>

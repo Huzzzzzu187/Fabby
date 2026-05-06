@@ -10,14 +10,7 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL
 
 axios.defaults.baseURL = backendUrl
 
-const getImageUrl = (image) => {
-    if (!image) return ''
 
-    // Extract raw filename if full URL/path is passed (handles localhost, relative, or cloud URL formats)
-    const filename = image.split('/').pop();
-
-    return `${import.meta.env.VITE_BACKEND_URL}/images/${filename}`
-}
 
 const ShopContextProvider = (props) => {
 
@@ -168,7 +161,7 @@ const ShopContextProvider = (props) => {
         addToCart, cartItems,setCartItems,
         getCartCount,updateQuantity,
         getCartAmount, navigate, backendUrl,
-        setToken,token, getImageUrl
+        setToken,token
     }
 
     return (
