@@ -1,28 +1,3 @@
-// ─── Product Images: Adult Diapers (Tape Style) ──────────────────────────────
-import adultdiaper1 from './adultdiaper (1).png'
-import adultdiaper2 from './adultdiaper (2).png'
-import adultdiaper3 from './adultdiaper (3).png'
-
-// ─── Product Images: Adult Diapers Second Style (Pants) ──────────────────────
-import adultdiaperSecond1 from './adultdiaper-second (1).png'
-import adultdiaperSecond2 from './adultdiaper-second (2).png'
-import adultdiaperSecond3 from './adultdiaper-second (3).png'
-
-// ─── Product Images: Baby / Hygiene Wipes ────────────────────────────────────
-import babywipes1 from './babywipes (1).png'
-import babywipes2 from './babywipes (2).png'
-import babywipes3 from './babywipes (3).png'
-import babywipes4 from './babywipes (4).png'
-
-// ─── Product Images: Body / Anti-bacterial Wipes ─────────────────────────────
-import bodywipes1 from './bodywipes (1).png'
-import bodywipes2 from './bodywipes (2).png'
-
-// ─── Product Images: Underpads ───────────────────────────────────────────────
-import underpads1 from './underpads (1).png'
-import underpads2 from './underpads (2).png'
-import underpads3 from './underpads (3).png'
-import underpads4 from './underpads (4).png'
 
 // ─── Logos ───────────────────────────────────────────────────────────────────
 // PNG = background-free (transparent), JPEG = with background
@@ -80,7 +55,7 @@ export const products = [
         name: "Fabby Premium Adult Diapers (Tape Style)",
         description: "Dermatologically tested tape-style diapers with 2L absorption capacity. Designed for maximum protection and comfort, perfect for overnight use and bedridden patients.",
         price: 850,
-        image: [adultdiaper1, adultdiaper2, adultdiaper3],
+        image: ["adultdiaper (1).png", "adultdiaper (2).png", "adultdiaper (3).png"],
         category: "Diapers",
         subcategory: "High Absorbency",
         date: 1716634345448,
@@ -92,7 +67,7 @@ export const products = [
         name: "Fabby Active Diaper Pants",
         description: "Pull-up style diaper pants offering a secure, underwear-like fit. Ideal for active seniors, ensuring dignity and confidence throughout the day with a skin-friendly pH.",
         price: 950,
-        image: [adultdiaperSecond1, adultdiaperSecond2, adultdiaperSecond3],
+        image: ["adultdiaper-second (1).png", "adultdiaper-second (2).png", "adultdiaper-second (3).png"],
         category: "Pants",
         subcategory: "Everyday",
         date: 1716621345448,
@@ -104,7 +79,7 @@ export const products = [
         name: "Fabby Ultra-Soft Underpads (10 Pack)",
         description: "Highly absorbent underpads providing hospital-grade protection for beds, chairs, and surfaces. Features a waterproof backing and soft top layer for patient comfort.",
         price: 450,
-        image: [underpads1, underpads2, underpads3, underpads4],
+        image: ["underpads (1).png", "underpads (2).png", "underpads (3).png", "underpads (4).png"],
         category: "Underpads",
         subcategory: "Everyday",
         date: 1716234545448,
@@ -116,7 +91,7 @@ export const products = [
         name: "Fabby Aloe Vera Hygiene Wipes",
         description: "Extra-large, thick wipes enriched with Aloe Vera and Vitamin E. Perfect for gentle cleansing of sensitive adult skin. Alcohol-free and anti-bacterial.",
         price: 220,
-        image: [babywipes1, babywipes2, babywipes3, babywipes4],
+        image: ["babywipes (1).png", "babywipes (2).png", "babywipes (3).png", "babywipes (4).png"],
         category: "Wipes",
         subcategory: "Sensitive",
         date: 1716621345448,
@@ -128,7 +103,7 @@ export const products = [
         name: "Fabby Overnight Plus Diapers",
         description: "Maximum absorbency tape-style diapers designed for heavy incontinence. Features dual core technology for locking in moisture and preventing leaks for up to 12 hours.",
         price: 1150,
-        image: [adultdiaper1, adultdiaper2, adultdiaper3],
+        image: ["adultdiaper (1).png", "adultdiaper (2).png", "adultdiaper (3).png"],
         category: "Diapers",
         subcategory: "High Absorbency",
         date: 1716622345448,
@@ -140,7 +115,7 @@ export const products = [
         name: "Fabby Daily Comfort Pants",
         description: "Lightweight, breathable diaper pants for moderate incontinence. Soft elastic waistband provides a comfortable fit without leaving marks.",
         price: 880,
-        image: [adultdiaperSecond1, adultdiaperSecond2, adultdiaperSecond3],
+        image: ["adultdiaper-second (1).png", "adultdiaper-second (2).png", "adultdiaper-second (3).png"],
         category: "Pants",
         subcategory: "Everyday",
         date: 1716623423448,
@@ -152,7 +127,7 @@ export const products = [
         name: "Fabby Heavy Duty Underpads (L)",
         description: "Large size heavy-duty underpads with superior liquid retention. Ideal for post-surgery care or severe incontinence management.",
         price: 550,
-        image: [underpads1, underpads2, underpads3, underpads4],
+        image: ["underpads (1).png", "underpads (2).png", "underpads (3).png", "underpads (4).png"],
         category: "Underpads",
         subcategory: "High Absorbency",
         date: 1716621542448,
@@ -164,7 +139,7 @@ export const products = [
         name: "Fabby Anti-bacterial Cleansing Wipes",
         description: "Medical-grade cleansing wipes with chlorhexidine to eliminate 99.9% of germs. Essential for safe caregiver practices and maintaining patient hygiene.",
         price: 280,
-        image: [bodywipes1, bodywipes2],
+        image: ["bodywipes (1).png", "bodywipes (2).png"],
         category: "Wipes",
         subcategory: "Anti-bacterial",
         date: 1716622345448,
@@ -176,7 +151,7 @@ export const products = [
         name: "Fabby Comfort Plus Diapers (M)",
         description: "Medium-sized tape diapers with refasten-able tapes and a cotton-like soft cover. Provides a snug, comfortable fit while preventing skin irritation.",
         price: 820,
-        image: [adultdiaper1, adultdiaper2, adultdiaper3],
+        image: ["adultdiaper (1).png", "adultdiaper (2).png", "adultdiaper (3).png"],
         category: "Diapers",
         subcategory: "Sensitive",
         date: 1716621235448,
@@ -188,7 +163,7 @@ export const products = [
         name: "Fabby Nighttime Pants (XL)",
         description: "Extra-large pull-up pants optimized for nighttime use. Features enhanced leak barriers and an extended absorbent core for undisrupted sleep.",
         price: 1050,
-        image: [adultdiaperSecond1, adultdiaperSecond2, adultdiaperSecond3],
+        image: ["adultdiaper-second (1).png", "adultdiaper-second (2).png", "adultdiaper-second (3).png"],
         category: "Pants",
         subcategory: "High Absorbency",
         date: 1716622235448,
